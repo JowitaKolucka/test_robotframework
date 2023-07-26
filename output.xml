@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1 (Python 3.11.4 on win32)" generated="20230726 20:55:03.459" rpa="false" schemaversion="4">
+<suite id="s1" name="Test Login Rf" source="C:\Users\jzbor\test_robotframework\test_login_rf.robot">
+<test id="s1-t1" name="Login to the system" line="17">
+<kw name="Open login page">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${LOGIN URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230726 20:55:03.592" level="INFO">Opening browser 'Chrome' to base url 'https://scouts-test.futbolkolektyw.pl/en'.</msg>
+<status status="PASS" starttime="20230726 20:55:03.591" endtime="20230726 20:55:05.550"/>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>Scouts panel - sign in</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20230726 20:55:05.555" level="INFO">Page title is 'Scouts panel - sign in'.</msg>
+<status status="PASS" starttime="20230726 20:55:05.550" endtime="20230726 20:55:05.555"/>
+</kw>
+<status status="PASS" starttime="20230726 20:55:03.591" endtime="20230726 20:55:05.555"/>
+</kw>
+<kw name="Type in email">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${EMAILINPUT}</arg>
+<arg>user07@getnada.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230726 20:55:05.556" level="INFO">Typing text 'user07@getnada.com' into text field 'xpath=//*[@id='login']'.</msg>
+<status status="PASS" starttime="20230726 20:55:05.556" endtime="20230726 20:55:05.720"/>
+</kw>
+<status status="PASS" starttime="20230726 20:55:05.556" endtime="20230726 20:55:05.720"/>
+</kw>
+<kw name="Type in password">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${PASSWORDINPUT}</arg>
+<arg>Test-1234</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230726 20:55:05.721" level="INFO">Typing text 'Test-1234' into text field 'xpath=//*[@id='password']'.</msg>
+<status status="PASS" starttime="20230726 20:55:05.721" endtime="20230726 20:55:05.802"/>
+</kw>
+<status status="PASS" starttime="20230726 20:55:05.720" endtime="20230726 20:55:05.802"/>
+</kw>
+<kw name="Click on the Submit button">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//*[(text()='Sign in')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230726 20:55:05.804" level="INFO">Clicking element 'xpath=//*[(text()='Sign in')]'.</msg>
+<status status="PASS" starttime="20230726 20:55:05.803" endtime="20230726 20:55:05.846"/>
+</kw>
+<status status="PASS" starttime="20230726 20:55:05.803" endtime="20230726 20:55:05.846"/>
+</kw>
+<kw name="Assert dashboard">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${PAGELOGO}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230726 20:55:05.846" endtime="20230726 20:55:07.395"/>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>Scouts panel</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20230726 20:55:07.404" level="INFO">Page title is 'Scouts panel'.</msg>
+<status status="PASS" starttime="20230726 20:55:07.395" endtime="20230726 20:55:07.405"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>alert.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20230726 20:55:07.553" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="alert.png"&gt;&lt;img src="alert.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20230726 20:55:07.405" endtime="20230726 20:55:07.553"/>
+</kw>
+<status status="PASS" starttime="20230726 20:55:05.846" endtime="20230726 20:55:07.553"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230726 20:55:07.554" endtime="20230726 20:55:09.636"/>
+</kw>
+<status status="PASS" starttime="20230726 20:55:03.591" endtime="20230726 20:55:09.637"/>
+</test>
+<doc>Suite description</doc>
+<status status="PASS" starttime="20230726 20:55:03.460" endtime="20230726 20:55:09.639"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Test Login Rf">Test Login Rf</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20230726 20:55:03.456" level="ERROR">Error in file 'C:\Users\jzbor\test_robotframework\test_login_rf.robot' on line 4: Setting 'Documentation' is allowed only once. Only the first value is used.</msg>
+</errors>
+</robot>
