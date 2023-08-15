@@ -12,14 +12,14 @@ ${PASSWORDINPUT}        xpath=//*[@id='password']
 ${PAGELOGO}     xpath=//*[@id="__next"]/div[1]/main/div[3]/div[1]/div/div[1]
 ${LOGIN FORM}  xpath=//*[@id='__next']/form
 ${SIGNOUTBUTTON}  xpath=//*[@id="__next"]/div[1]/div/div/div/ul[2]/div[2]/div[2]/span
-${ADDPLAYERBUTTON}  xpath = "//*[@id='__next']/div[1]/main/div[3]/div[2]/div/div/a/button/span[1]"
-${E-MAILFIELD}    xpath = "//input[@name = 'email']"
-${NAMEFIELD}   xpath = "//input[@name = 'name']"
-${SURNAMEFIELD}   xpath = "//input[@name = 'surname']"
-${AGEFIELD}    xpath = "//input[@name = 'age']"
-${MAINPOSITIONFIELD}   xpath = "//input[@name = 'mainPosition']"
-${ADDPLAYER}    xpath = "//button[@type='submit']"
-${ADDEDAPLAYER}   xpath = "//*[@id='sj7bgkps3j']/div[1]"
+${ADDPLAYERBUTTON}  xpath=//main/div[3]/div[2]/div[1]/div[1]/a/button
+${E-MAILFIELD}    xpath=//input[@name = 'email']
+${NAMEFIELD}   xpath=//input[@name = 'name']
+${SURNAMEFIELD}   xpath=//input[@name = 'surname']
+${AGEFIELD}    xpath=//input[@name = 'age']
+${MAINPOSITIONFIELD}   xpath=//input[@name = 'mainPosition']
+${ADDPLAYER}    xpath=//button[@type='submit']
+${ADDEDAPLAYER}   xpath=//*[@id='sj7bgkps3j']/div[1]
 
 
 
@@ -53,11 +53,13 @@ Filling add player form
     Click On The Submit Button
     Wait Until Element Is Visible    ${ADDPLAYERBUTTON}
     Click On The Add Player Button
+    Wait Until Element Is Visible    ${E-MAILFIELD}
     Type In E-mail
     Type In Name
     Type In Surname
     Type In Age
     Type In Main Position
+    Wait Until Element Is Visible    ${ADDPLAYER}
     Click On The Add a Player Button
     Assert AddPlayer
     [Teardown]    Close Browser
@@ -76,19 +78,19 @@ Click on the Submit button
 Click on the Signout button
         Click Element    xpath=//*[@id="__next"]/div[1]/div/div/div/ul[2]/div[2]/div[2]/span
 Click on the Add Player Button
-        Click Element    xpath = "//*[@id='__next']/div[1]/main/div[3]/div[2]/div/div/a/button/span[1]"
+        Click Element    xpath=//main/div[3]/div[2]/div[1]/div[1]/a/button
 Type in E-mail
-        Input Text    ${E-MAILFIELD} jacek@gmail.com
+        Input Text    ${E-MAILFIELD}  jacek@gmail.com
 Type in Name
-        Input Text    ${NAMEFIELD}  Jacek
+        Input Text    ${NAMEFIELD}   Jacek
 Type in Surname
-        Input Text    ${SURNAMEFIELD} Kopacz
+        Input Text    ${SURNAMEFIELD}  Kopacz
 Type in Age
-        Input Text    ${AGEFIELD} 10/10/1993
+        Input Text    ${AGEFIELD}  10/10/1993
 Type in Main Position
-        Input Text    ${MAINPOSITIONFIELD} Striker
+        Input Text    ${MAINPOSITIONFIELD}  Striker
 Click on the Add a Player button
-        Click Element    xpath = "//button[@type='submit']"
+        Click Element    xpath=//button[@type='submit']
 Assert AddPlayer
         Wait Until Element Is Visible    ${ADDEDAPLAYER}
 Assert dashboard
